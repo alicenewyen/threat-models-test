@@ -1,0 +1,26 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Review Website Threat Model",
+    "owner": "Anh Tu Nguyen",
+    "description": "A reviews website with three user roles (anonymous, identified, admin). \nWeb server handles review posting/deletion, notifications sent via email server, \nauthentication via identity management system, reviews stored in RDBMS, \nand logs written to a log server. Admin also manages configuration file. \nSTRIDE methodology applied.\n",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "New STRIDE diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
