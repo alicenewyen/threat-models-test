@@ -135,8 +135,8 @@
                 "text": "Anonymous User\n(Browser)"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -233,9 +233,40 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "7e77ae39-3fb4-466f-8e54-e1c263492181",
+                  "title": "Anonymous user identity spoofing",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Attacker forges/abuses anonymous sessions to scrape or abuse rate limits.",
+                  "mitigation": "Global rate limiting, bot protection/CAPTCHA, IP reputation, consistent 401/403 handling.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "a7c8ce8e-f1bf-4ffb-b781-a15481254680",
+                  "title": "Action repudiation by anonymous users",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Anonymous actions cannot be tied to a person; abuse may be denied.",
+                  "mitigation": "Structured logging with request IDs, timestamps, and evidence preservation; WORM/audit retention.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 1
+              }
             }
           },
           {
@@ -252,8 +283,8 @@
                 "text": "Identified User\n(Browser)"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -350,9 +381,40 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "a5fc6258-d7ae-4faa-81b9-11593470a300",
+                  "title": "Credential Stuffing Attack",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Attacker uses leaked passwords to log in as a user.",
+                  "mitigation": "MFA, breached-password checks, rate limiting/lockout, IP throttling.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "7957f99a-5057-44d6-bdf8-e3c54358f4b1",
+                  "title": "User denies posting a review",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Authenticated user claims they didn’t perform an action.",
+                  "mitigation": "Signed audit logs with user ID, timestamp, client info; immutable retention.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 1
+              }
             }
           },
           {
@@ -369,8 +431,8 @@
                 "text": "Administrator \n(Browser/SSH)"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -467,18 +529,49 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "9a573bab-c5c6-4deb-ba82-14393dbde224",
+                  "title": "Admin Account Takeover",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Attacker could gain access to the admin account via credential theft or brute force.",
+                  "mitigation": "Strong MFA, rate limiting, IP restrictions, session timeout.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "02ce2e91-57b5-49ea-8cd4-2f14516e63e1",
+                  "title": "Admin action repudiation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Admin denies deleting or modifying reviews/log settings.",
+                  "mitigation": "Append-only signed audit logs, dual-control for destructive ops, change tickets linked.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 1
+              }
             }
           },
           {
             "position": {
-              "x": -931,
+              "x": -911,
               "y": 230.00000000000182
             },
             "size": {
-              "width": 120,
+              "width": 100,
               "height": 100
             },
             "attrs": {
@@ -486,8 +579,8 @@
                 "text": "Web Server/\nAPI"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -584,12 +677,86 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "21cd7353-caca-4cf8-856c-15791ca511ab",
+                  "title": "Stored XSS via Reviews",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Malicious review content executes in readers’ browsers.",
+                  "mitigation": "Output encoding, safe Markdown/HTML sanitizer, CSP (no inline), input length/type checks.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "5abb3e63-cae8-417c-94e0-4cc6de08030e",
+                  "title": "CSRF on delete/edit review",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Cross-site request causes state change.",
+                  "mitigation": "CSRF tokens, SameSite cookies, POST-only for mutating ops, confirm dialogs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                },
+                {
+                  "id": "ee7a569f-fdf1-48f0-aca0-47a26ad7ad8a",
+                  "title": "Unauthorized admin endpoints",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Weak/forgotten authZ lets normal users call admin APIs.",
+                  "mitigation": "Central RBAC/policy layer, deny-by-default, explicit role checks, separate admin path + MFA.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "02ddf3da-0afb-4ffb-9768-93d3d81fbb2c",
+                  "title": "DoS via request flooding",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Excessive requests exhaust CPU/threads.",
+                  "mitigation": "Rate limits, request time/size limits, autoscale, cache/pagination, WAF.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "3ae80a29-d3e1-437c-b31f-c2c45aed701a",
+                  "title": "Insecure deserialization/over-posting",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Model binding accepts fields that change server state or role.",
+                  "mitigation": "DTO allowlists, disable polymorphic binding, server-side schema validation.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 3
+              }
             }
           },
           {
@@ -606,8 +773,8 @@
                 "text": "Identity \nMgmt\n Server"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -704,18 +871,53 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "870eb91c-9d74-484c-928e-964f48f2d9d7",
+                  "title": "Token replay / bad OIDC validation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Missing nonce/state/aud checks allow replay or misuse.",
+                  "mitigation": "Validate iss/aud/exp/nbf, enforce nonce/state, PKCE, short-lived tokens, clock skew limits.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "656c058e-d1bf-4b51-ba45-f59600c9b063",
+                  "title": "Weak session/logout controls",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Long idle sessions enable lateral use of stolen tokens.",
+                  "mitigation": "Idle/absolute timeouts, back-channel logout, device/session list & revocation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
             "position": {
               "x": -410,
-              "y": 110
+              "y": 155.0000000000008
             },
             "size": {
               "width": 80,
@@ -726,8 +928,8 @@
                 "text": "Email \nServer"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -824,18 +1026,53 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "586169d7-021c-4d5f-8399-b11591710cd8",
+                  "title": "Email header/content injection",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Unsanitized fields break headers or inject links.",
+                  "mitigation": "Templating with escaping, provider SDKs, validate subject/body inputs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                },
+                {
+                  "id": "8d8778cf-b389-40fe-816b-6a255de2dea4",
+                  "title": "User/review enumeration via emails",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Observable differences reveal existence of accounts/reviews.",
+                  "mitigation": "Uniform responses/timing, generic messages, throttle email sends.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
             "position": {
-              "x": -435,
-              "y": 255.00000000000023
+              "x": -405,
+              "y": 260.0000000000018
             },
             "size": {
               "width": 70,
@@ -846,8 +1083,8 @@
                 "text": "Admin\nUI"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -944,12 +1181,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "e8c5e58e-e9df-486f-b140-1353219229f2",
+                  "title": "Privilege escalation through hidden admin features",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Server-side RBAC checks on every action; no client-side trust.\n\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                },
+                {
+                  "id": "c3caf673-b930-47d2-8c1a-e52764869421",
+                  "title": "Clickjacking",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "X-Frame-Options/SAMEORIGIN, frame-ancestors CSP.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -966,11 +1238,13 @@
                 "text": "Relational\nDBMS (Reviews)"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1067,13 +1341,66 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "433d50ef-29da-4510-a23a-9a58721e62ba",
+                  "title": "SQL injection on review CRUD",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Malicious input modifies queries.",
+                  "mitigation": "Parameterized queries, ORM safe APIs, least-priv DB user, input validation.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": ""
+                },
+                {
+                  "id": "bdfc2032-c337-48fb-aa9f-c0cd09b23de7",
+                  "title": "Missing row-level authorization",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Users can read/delete others’ reviews.",
+                  "mitigation": "Enforce ownership checks on server; add DB constraints; test coverage.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                },
+                {
+                  "id": "f2f5fc58-5071-439c-963f-53cb31e87274",
+                  "title": "Data exfiltration from excessive fields",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Response field allowlists, data minimization, views limited to needed columns.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1090,11 +1417,13 @@
                 "text": "Log Server /\nSIEM"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1191,13 +1520,59 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "6072cf21-4e5f-42ef-b7e3-720641e4d467",
+                  "title": "Sensitive logs exposed to normal users",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Private audit data accessible to any authenticated user.",
+                  "mitigation": "Separate admin-only index, RBAC, redaction (no secrets/PII/tokens), least-priv read roles.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": ""
+                },
+                {
+                  "id": "e408f6a6-fedd-47da-b333-da4c56433927",
+                  "title": "Log forgery / tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Crafted entries confuse audit trails; integrity lost.",
+                  "mitigation": "Structured JSON logs, hashing/signing, append-only/WORM retention, time sync.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": ""
+                },
+                {
+                  "id": "55b58d44-5e47-49a7-84c0-e5287259479f",
+                  "title": "Log ingestion overload",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Excess events cause loss/back-pressure on app.",
+                  "mitigation": "Back-pressure handling, quotas, batching, async shipping with circuit breakers.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             }
           },
           {
@@ -1214,11 +1589,13 @@
                 "text": "Configuration\nFile (WS local)"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1324,18 +1701,50 @@
               "threats": [
                 {
                   "id": "e75156c5-3280-4c04-b32d-7cd125c50f58",
-                  "title": "New STRIDE threat",
+                  "title": "Config file tampering",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Local file edited to weaken security.",
+                  "mitigation": "Strict file ACLs (read-only to service), signed config, change approvals.",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 2,
                   "score": ""
+                },
+                {
+                  "id": "8d87da59-308a-4172-a935-fe556c766455",
+                  "title": "Secrets stored in plaintext",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "DB/API keys in config are leaked.",
+                  "mitigation": "Secret manager/KMS, do not store secrets in files; rotate keys.\n\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "e7ea042f-29f5-4492-a10c-a82d63f92121",
+                  "title": "Invalid hot-reload causes failure",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Bad config reload crashes the app.",
+                  "mitigation": "Schema validation, safe defaults, fail-closed, canary reload.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": ""
                 }
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             }
           },
           {
@@ -1745,8 +2154,8 @@
             },
             "vertices": [
               {
-                "x": -710,
-                "y": 210
+                "x": -630,
+                "y": 190
               }
             ]
           },
@@ -1797,15 +2206,15 @@
             "vertices": [
               {
                 "x": -460,
-                "y": 230
+                "y": 270
               },
               {
                 "x": -670,
-                "y": 490
+                "y": 530
               },
               {
                 "x": -1000,
-                "y": 460
+                "y": 500
               }
             ]
           },
@@ -1920,6 +2329,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 2
+    "threatTop": 27
   }
 }
