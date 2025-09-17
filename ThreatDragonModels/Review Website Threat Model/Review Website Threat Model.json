@@ -1206,7 +1206,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
+                  "description": "Embedding the admin UI in a hidden frame tricks admins into clicking privileged actions.",
                   "mitigation": "X-Frame-Options/SAMEORIGIN, frame-ancestors CSP.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1218,10 +1218,17 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 1
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1380,7 +1387,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
+                  "description": "APIs/queries return more columns than necessary (PII/internal IDs), enabling bulk leakage",
                   "mitigation": "Response field allowlists, data minimization, views limited to needed columns.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1391,16 +1398,9 @@
               "threatFrequency": {
                 "tampering": 1,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1767,108 +1767,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Read Reviews \n(HTTP GET)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Read Reviews \n(HTTP GET)"
-            ],
-            "id": "e1f8ddcb-4be0-41b4-8d12-09d88467a507",
-            "source": {
-              "cell": "d7fc98bf-915d-4b55-a9c2-85eddb77d22b",
-              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
-            },
-            "target": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "vertices": [
-              {
-                "x": -1160,
-                "y": 50
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Write/Delete Reviews \n(HTTP POST/DELETE)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Write/Delete Reviews \n(HTTP POST/DELETE)"
-            ],
-            "id": "312c5497-b1aa-4ead-b7ae-68a99c721867",
-            "source": {
-              "cell": "f1f02d8e-3dca-4b9b-9bf4-b1bef7698d6c",
-              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
-            },
-            "target": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
-            },
-            "vertices": [
-              {
-                "x": -1120,
-                "y": 180
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Admin Operations & \nView Private Logs \n(HTTPS)",
               "description": "",
               "outOfScope": false,
@@ -1897,375 +1795,6 @@
               {
                 "x": -1090,
                 "y": 345
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "CRUD Reviews\n (SQL parameterized)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "CRUD Reviews\n (SQL parameterized)"
-            ],
-            "id": "00df1b3b-419c-4c07-b781-e511a240c2ae",
-            "source": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "b0528df8-c8c9-4e43-a135-96e937071141"
-            },
-            "target": {
-              "cell": "7aa91f30-117e-4760-8969-2584523c2e38",
-              "port": "31a5f747-48c1-4788-93cc-3ab3757f7e24"
-            },
-            "vertices": [
-              {
-                "x": -610,
-                "y": 370
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Write Logs \n(events, audit, access)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Write Logs \n(events, audit, access)"
-            ],
-            "id": "7ad58582-cfe5-406c-9b7f-cf33428ea905",
-            "source": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "ee2cd77b-969d-44e1-a343-cac5b381901b"
-            },
-            "target": {
-              "cell": "f6c199f7-fa41-48e2-a53b-3d209ff5473e",
-              "port": "31a5f747-48c1-4788-93cc-3ab3757f7e24"
-            },
-            "vertices": [
-              {
-                "x": -800,
-                "y": 390
-              },
-              {
-                "x": -660,
-                "y": 450
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "AuthN/AuthZ: OIDC/OAuth \n(token, code+PKCE)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "AuthN/AuthZ: OIDC/OAuth \n(token, code+PKCE)"
-            ],
-            "id": "1c46aa7f-0157-4d4b-ae26-320d04f343df",
-            "source": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "target": {
-              "cell": "ef98f7d8-a296-4d5f-b109-8bb61764025b",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "vertices": [
-              {
-                "x": -710,
-                "y": 30
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Tokens/Assertions\n (id/access tokens)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Tokens/Assertions\n (id/access tokens)"
-            ],
-            "id": "5fda80fe-2f41-49eb-81c6-5f303b9b55eb",
-            "source": {
-              "cell": "ef98f7d8-a296-4d5f-b109-8bb61764025b",
-              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
-            },
-            "target": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "vertices": [
-              {
-                "x": -600,
-                "y": 70
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Send Notifications \n(SMTP/SDK)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Send Notifications \n(SMTP/SDK)"
-            ],
-            "id": "fac414f3-b9c7-42b9-864e-5caeae1fb911",
-            "source": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "b0528df8-c8c9-4e43-a135-96e937071141"
-            },
-            "target": {
-              "cell": "1ed1ef19-2021-43a0-a75e-5438002f75da",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "vertices": [
-              {
-                "x": -630,
-                "y": 190
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Ack/Removal Emails",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Ack/Removal Emails"
-            ],
-            "id": "78edfde3-6a41-45ab-8569-373bc7dcecdf",
-            "source": {
-              "cell": "1ed1ef19-2021-43a0-a75e-5438002f75da",
-              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
-            },
-            "target": {
-              "cell": "f1f02d8e-3dca-4b9b-9bf4-b1bef7698d6c",
-              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
-            },
-            "vertices": [
-              {
-                "x": -460,
-                "y": 270
-              },
-              {
-                "x": -670,
-                "y": 530
-              },
-              {
-                "x": -1000,
-                "y": 500
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Read/Apply\n Config",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Read/Apply\n Config"
-            ],
-            "id": "2c710257-e12b-44de-a59a-c48bd3cda139",
-            "source": {
-              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
-              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            },
-            "target": {
-              "cell": "ceda99b2-ebe7-4c8f-ba78-3aec845bf0c4",
-              "port": "0d308679-941d-48b4-bbb6-732dcee31bf1"
-            },
-            "vertices": [
-              {
-                "x": -920,
-                "y": 50
               }
             ]
           },
@@ -2323,12 +1852,702 @@
                 "y": 270
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Read Reviews \n(HTTP GET)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "57f675b9-e595-4c82-8510-1c403531e69e",
+                  "title": "Clear-text transport",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Traffic over public networks could be intercepted or modified if TLS is not enforced.",
+                  "mitigation": "Enforce HTTPS/TLS 1.2+, HSTS, secure cookies (HttpOnly/SameSite/Secure).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": ""
+                },
+                {
+                  "id": "c7337c68-4763-41dd-9806-04670f336d94",
+                  "title": "Request flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Unauthenticated GET requests can exhaust server resources.",
+                  "mitigation": "Rate limiting, WAF throttling, CDN caching, pagination.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
+            },
+            "labels": [
+              "Read Reviews \n(HTTP GET)"
+            ],
+            "id": "e1f8ddcb-4be0-41b4-8d12-09d88467a507",
+            "source": {
+              "cell": "d7fc98bf-915d-4b55-a9c2-85eddb77d22b",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
+            },
+            "target": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "vertices": [
+              {
+                "x": -1160,
+                "y": 50
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Write/Delete Reviews \n(HTTP POST/DELETE)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "0440eb18-12e1-40c5-8feb-d28daa3294d4",
+                  "title": "CSRF on state-changing requests",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Cross-site requests can trigger deletes/creates without user intent.",
+                  "mitigation": "CSRF tokens, SameSite cookies, POST-only for mutations, confirm dialogs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": ""
+                },
+                {
+                  "id": "5cb8a994-7eb7-48d7-9b6e-77f269c02e6a",
+                  "title": "Session/token theft in transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Stolen cookies/tokens allow account takeover if transport is weak.",
+                  "mitigation": "TLS everywhere, HttpOnly/SameSite/Secure cookies, short-lived tokens.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Write/Delete Reviews \n(HTTP POST/DELETE)"
+            ],
+            "id": "312c5497-b1aa-4ead-b7ae-68a99c721867",
+            "source": {
+              "cell": "f1f02d8e-3dca-4b9b-9bf4-b1bef7698d6c",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
+            },
+            "target": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
+            },
+            "vertices": [
+              {
+                "x": -1120,
+                "y": 180
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "AuthN/AuthZ: OIDC/OAuth \n(token, code+PKCE)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b1e0fbbc-7b5e-409d-8265-d1f42b087abf",
+                  "title": "Token interception / code replay",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Interception or replay of auth codes/tokens due to weak validation or redirects.",
+                  "mitigation": "PKCE, strict redirect URIs, validate iss/aud/exp/nbf, nonce/state, TLS.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "AuthN/AuthZ: OIDC/OAuth \n(token, code+PKCE)"
+            ],
+            "id": "1c46aa7f-0157-4d4b-ae26-320d04f343df",
+            "source": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "target": {
+              "cell": "ef98f7d8-a296-4d5f-b109-8bb61764025b",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "vertices": [
+              {
+                "x": -710,
+                "y": 30
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Tokens/Assertions\n (id/access tokens)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "395bee7f-7ea9-4a7b-9ee8-7aa63f7f3558",
+                  "title": "Token tampering / misuse",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Unsigned or improperly validated tokens can be altered or misused.",
+                  "mitigation": "Verify signature/alg, iss/aud/exp, key rotation, clock skew limits.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Tokens/Assertions\n (id/access tokens)"
+            ],
+            "id": "5fda80fe-2f41-49eb-81c6-5f303b9b55eb",
+            "source": {
+              "cell": "ef98f7d8-a296-4d5f-b109-8bb61764025b",
+              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
+            },
+            "target": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "vertices": [
+              {
+                "x": -600,
+                "y": 70
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "CRUD Reviews\n (SQL parameterized)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "f5975fd9-a953-4bd9-9913-88ba35b4442d",
+                  "title": "SQL injection over DB channel",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Malicious input alters queries and data.",
+                  "mitigation": "Prepared statements, ORM safe APIs, least-priv DB user, input validation.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": ""
+                },
+                {
+                  "id": "d17f45e2-5d5e-46ab-9528-014f3c01ff9d",
+                  "title": "DB credentials exposure in transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Plain DB connections leak credentials/records.",
+                  "mitigation": "TLS for DB connections, secret manager, credential rotation.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "CRUD Reviews\n (SQL parameterized)"
+            ],
+            "id": "00df1b3b-419c-4c07-b781-e511a240c2ae",
+            "source": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "b0528df8-c8c9-4e43-a135-96e937071141"
+            },
+            "target": {
+              "cell": "7aa91f30-117e-4760-8969-2584523c2e38",
+              "port": "31a5f747-48c1-4788-93cc-3ab3757f7e24"
+            },
+            "vertices": [
+              {
+                "x": -610,
+                "y": 370
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Write Logs \n(events, audit, access)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "cdc64429-9b73-430a-b09f-b9643c88cd3c",
+                  "title": "Sensitive data leakage in logs",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "PII/tokens may transit to the log sink without redaction.",
+                  "mitigation": "Redact before emit, structured logging, TLS to log sink, field encryption where needed.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Write Logs \n(events, audit, access)"
+            ],
+            "id": "7ad58582-cfe5-406c-9b7f-cf33428ea905",
+            "source": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "ee2cd77b-969d-44e1-a343-cac5b381901b"
+            },
+            "target": {
+              "cell": "f6c199f7-fa41-48e2-a53b-3d209ff5473e",
+              "port": "31a5f747-48c1-4788-93cc-3ab3757f7e24"
+            },
+            "vertices": [
+              {
+                "x": -800,
+                "y": 390
+              },
+              {
+                "x": -660,
+                "y": 450
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Send Notifications \n(SMTP/SDK)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "86466c56-b5c2-4a7a-8bbf-f321fb9f15dd",
+                  "title": "SMTP downgrade/MITM",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Opportunistic TLS downgrades expose content/addresses.",
+                  "mitigation": "Require STARTTLS/SMTPS, MTA-STS/TLSRPT if supported.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 37,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Send Notifications \n(SMTP/SDK)"
+            ],
+            "id": "fac414f3-b9c7-42b9-864e-5caeae1fb911",
+            "source": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "b0528df8-c8c9-4e43-a135-96e937071141"
+            },
+            "target": {
+              "cell": "1ed1ef19-2021-43a0-a75e-5438002f75da",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "vertices": [
+              {
+                "x": -630,
+                "y": 190
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Ack/Removal Emails",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "84857f32-89b2-49f6-b216-db879308d52d",
+                  "title": "Notification enumeration",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Different responses/timing reveal whether users/reviews exist.",
+                  "mitigation": "Uniform messages/timing; throttle email sends.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 38,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Ack/Removal Emails"
+            ],
+            "id": "78edfde3-6a41-45ab-8569-373bc7dcecdf",
+            "source": {
+              "cell": "1ed1ef19-2021-43a0-a75e-5438002f75da",
+              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
+            },
+            "target": {
+              "cell": "f1f02d8e-3dca-4b9b-9bf4-b1bef7698d6c",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
+            },
+            "vertices": [
+              {
+                "x": -460,
+                "y": 270
+              },
+              {
+                "x": -670,
+                "y": 530
+              },
+              {
+                "x": -1000,
+                "y": 500
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 11,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Read/Apply\n Config",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "00326e89-fc4e-40dc-9499-758bcc0f7646",
+                  "title": "Unauthorized config write",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "If the service can write to config, it can weaken controls at runtime.",
+                  "mitigation": "Read-only perms for service account; signed configs; change control.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 39,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Read/Apply\n Config"
+            ],
+            "id": "2c710257-e12b-44de-a59a-c48bd3cda139",
+            "source": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "62e7046d-1c45-41f1-a143-1478341f254e"
+            },
+            "target": {
+              "cell": "ceda99b2-ebe7-4c8f-ba78-3aec845bf0c4",
+              "port": "0d308679-941d-48b4-bbb6-732dcee31bf1"
+            },
+            "vertices": [
+              {
+                "x": -920,
+                "y": 50
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 27
+    "threatTop": 39
   }
 }
