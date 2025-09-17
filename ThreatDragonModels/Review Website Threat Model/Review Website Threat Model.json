@@ -123,8 +123,8 @@
           },
           {
             "position": {
-              "x": -1520,
-              "y": 125.0000000000008
+              "x": -1510,
+              "y": 115.0000000000008
             },
             "size": {
               "width": 140,
@@ -240,8 +240,8 @@
           },
           {
             "position": {
-              "x": -1520,
-              "y": 250.00000000000057
+              "x": -1510,
+              "y": 230.00000000000057
             },
             "size": {
               "width": 140,
@@ -357,8 +357,8 @@
           },
           {
             "position": {
-              "x": -1520,
-              "y": 370
+              "x": -1510,
+              "y": 350
             },
             "size": {
               "width": 140,
@@ -1344,7 +1344,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Read Reviews \n(HTTP GET)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1357,17 +1357,110 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Read Reviews \n(HTTP GET)"
             ],
-            "id": "8170130e-98cf-40d2-83a1-8070f81105f7",
+            "id": "e1f8ddcb-4be0-41b4-8d12-09d88467a507",
             "source": {
-              "x": -1380,
-              "y": 153
+              "cell": "d7fc98bf-915d-4b55-a9c2-85eddb77d22b",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
             },
             "target": {
               "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
               "port": "62e7046d-1c45-41f1-a143-1478341f254e"
-            }
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Write/Delete Reviews \n(HTTP POST/DELETE)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Write/Delete Reviews \n(HTTP POST/DELETE)"
+            ],
+            "id": "312c5497-b1aa-4ead-b7ae-68a99c721867",
+            "source": {
+              "cell": "f1f02d8e-3dca-4b9b-9bf4-b1bef7698d6c",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
+            },
+            "target": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "ae39b25e-487b-450b-b969-da19c70060e8"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Operations & \nView Private Logs \n(HTTPS)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Admin Operations & \nView Private Logs \n(HTTPS)"
+            ],
+            "id": "280dead0-328c-4193-a4fe-557e125e0aae",
+            "source": {
+              "cell": "65bfaab3-ed4f-4a3b-980e-1afeb7466eb7",
+              "port": "4d27420c-2b1b-43df-ba04-560e2870a144"
+            },
+            "target": {
+              "cell": "644a59b2-59cb-47dd-b036-694e6aa04547",
+              "port": "ee2cd77b-969d-44e1-a343-cac5b381901b"
+            },
+            "vertices": []
           }
         ]
       }
